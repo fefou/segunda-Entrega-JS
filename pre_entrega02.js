@@ -23,7 +23,7 @@ matesPush.push(mate1, mate2, mate3, mate4)
 
 function agregarMate() {
     let tipoMate = prompt("Ingrese el tipo de mate")
-    let precioMate = prompt("Ingrese el precio del mate")
+    let precioMate = parseInt(prompt("Ingrese el precio del mate"))
     const mateNuevo = new Mate(matesPush.length + 1, tipoMate, precioMate)
     console.log(mateNuevo)
     matesPush.push(mateNuevo)
@@ -50,13 +50,13 @@ function mostrarCatalogoForEach(array) {
 
 function buscarPorTipo(array) {
     let tipoBuscado = prompt("Ingrese el tipo de mate que desea buscar")
-    let busqueda = array.find(
+    let busquedaT = array.find(
         (mate) => mate.tipo.toUpperCase() === tipoBuscado.toUpperCase()
     )
-    if (busqueda == undefined) {
+    if (busquedaT == undefined) {
         console.log(`El mate ${tipoBuscado} no está en nuestro catálogo`)
     } else {
-        console.log(busqueda)
+        console.log(busquedaT)
     }
 }
 
